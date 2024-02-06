@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { useWorkoutContext } from '../hooks/useWorkoutContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 
@@ -34,6 +35,11 @@ const WorkoutDetails = ({ workout }) => {
       <p> <strong>Reps : </strong>{workout.reps}</p>
       <p>{workout.createdAt}</p>
       <span onClick={handleClick}>Delete</span>
+
+      <Link to={`/editWorkout/${workout._id}`}>
+      Edit Workout
+      </Link>
+     
 
     </div>
   );

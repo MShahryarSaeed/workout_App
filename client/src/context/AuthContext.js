@@ -16,6 +16,7 @@ export const authReducer = (state, action) => {
     default:
       return state
   }
+  
 }
 
 export const AuthContextProvider = ({ children }) => {

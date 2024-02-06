@@ -11,3 +11,5 @@ export const useAuthContext = () => {
 
   return context;
 }
+
+// const{user,dispatch}=useAuthContext();

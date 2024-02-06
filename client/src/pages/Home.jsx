@@ -20,10 +20,10 @@ const Home = () => {
             'Authorization':`Bearer ${user.accessToken}`
           }
         });
-        const data = await response.json();
+        const json = await response.json();
 
         // setAllWorkouts(data);
-        dispatch({ type: 'SET_WORKOUTS', payload: data })
+        dispatch({ type: 'SET_WORKOUTS', payload: json })
       } catch (error) {
         console.log('Error While Fetching Workouts', error)
       }

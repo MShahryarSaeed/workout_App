@@ -11,6 +11,7 @@ const userRoutes = require("./modules/users/users.routes");
 const app=express();
 app.use(cors());
 
+
 // Middlewares
 app.use(express.json());
 app.use((req, res, next) => {
@@ -26,7 +27,7 @@ app.get('/',(req,res)=>{
 });
 
 // Connection with MongoDB Atlas
-mongoose.connect(process.env.mongo_connection,{}).then(()=>{
+mongoose.connect(process.env.local_connection,{}).then(()=>{
   console.log("Connected to MongoDB Atlas Successfully");
 }).catch((error)=>{
   console.log("Error While Conecting to MongoDB Atlas",error);

@@ -58,3 +58,11 @@ const SignUp = () => {
 }
 
 export default SignUp;
+
+// useState
+// useEffect
+// useReducer
+// useContext
+// useRef()
+// useMemo
+// useCallback

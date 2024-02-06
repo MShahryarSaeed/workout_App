@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext';
+import {useWorkoutContext} from '../hooks/useWorkoutContext';
 
 const EditWorkout = () => {
 
-  const{dispatch}=useAuthContext();
-  const{id}=useParams();
-  const navigate=useNavigate();
   const{user}=useAuthContext();
+  const{dispatch}=useWorkoutContext();
+  const navigate=useNavigate();
+  const{id}=useParams();
   const[formData,setFormData]=useState({});
   const[error,setError]=useState(null);
 

@@ -17,10 +17,17 @@ const workoutReducer = (state, action) => {
       return {
         workouts: state.workouts.filter(w => w._id !== action.payload._id)
       }
-      case 'EDIT_WORKOUT':
+    case 'EDIT_WORKOUT':
+      const updatedWorkouIndex = state.workouts.findIndex((w) => w._id === action.payload._id);
+      if (updatedWorkouIndex !== -1) {
+        const updatedWorkouts = [...state.workouts];
+        updatedWorkouts[updatedWorkouIndex] = action.payload
+
         return {
-          workouts:[...state.workouts,]
+          workouts: updatedWorkouts
         }
+      }
+      break;
     default:
       return state;
 

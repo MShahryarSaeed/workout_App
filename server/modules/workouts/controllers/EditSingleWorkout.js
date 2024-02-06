@@ -11,7 +11,7 @@ const EditSingleWorkout=async(req,res)=>{
     })
   }
 
-  const editWorkout=await workoutModel.findOneAndUpdate({_id:id},{...req.body});
+  const editWorkout=await workoutModel.findOneAndUpdate({_id:id},{...req.body},{new:true});
 
   if(!editWorkout) throw 'No Workout Present for this Particular Id';
 

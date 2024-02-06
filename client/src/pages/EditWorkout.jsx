@@ -4,6 +4,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 
 const EditWorkout = () => {
 
+  const{dispatch}=useAuthContext();
   const{id}=useParams();
   const navigate=useNavigate();
   const{user}=useAuthContext();
@@ -28,13 +29,14 @@ const EditWorkout = () => {
       }
       else{
         setFormData(json);
+        dispatch({type:'EDIT_WORKOUT',payload:json})
         console.log(json);
       }
 
     }
 
     fetchWorkout();
-  },[id,user.accessToken])
+  },[id,dispatch,user.accessToken])
 
   const changeHandler=(e)=>{
     setFormData({...formData,[e.target.name]:e.target.value});
